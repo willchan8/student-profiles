@@ -10,7 +10,7 @@ class Tag extends React.Component {
 
     return (
       <div className="tag">
-        { tag.charAt(0).toUpperCase() + tag.slice(1) }
+        { tag }
       </div>
     );
   }

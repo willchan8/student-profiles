@@ -27,7 +27,7 @@ class Student extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let newTag = this.state.newTag.toLowerCase();
+    let newTag = this.state.newTag;
     this.setState({ 
       tags: [...this.state.tags, newTag],
       newTag: ''
@@ -43,7 +43,7 @@ class Student extends React.Component {
 
     const expandText = expanded ? '−' : '+';
 
-    let studentClass = (tags.some(tag => tag.includes(searchedTag)) || !searchedTag) ? 'student-container' : 'hide';
+    let studentClass = (tags.some(tag => tag.toLowerCase().includes(searchedTag)) || !searchedTag) ? 'student-container' : 'hide';
 
     return (
       <div className={studentClass}>
